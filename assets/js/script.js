@@ -16,6 +16,15 @@ var taskFormHandler = function(event) {
       type: taskTypeInput
     };
 
+    // check if input values are empty strings
+    if (!taskNameInput || !taskTypeInput) {
+      alert("You need to fill out the task form!");
+      return false;
+    }
+
+    //reset() method is designed specifically for the <form> element and won't work on any other element. It resets the form fields.
+    formEl.reset();
+
     // send it as an argument to createTaskEl
     createTaskEl(taskDataObj);
   }
